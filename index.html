@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#08121d"><title>WORLD OF DREAMS</title>
+<link rel="stylesheet" href="css/style.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+</head>
+<body>
+<div id="game"></div>
+<div id="loading"><div class="logo">WORLD <i>OF</i> DREAMS</div><div class="loadline"><span></span></div><p>نجهّز عالمك...</p></div>
+<section id="start" class="overlay">
+ <div class="startbox">
+  <div class="tag">AN OPEN WORLD EXPERIENCE</div><h1>WORLD OF<br><em>DREAMS</em></h1>
+  <p class="sub">عالمك المفتوح يبدأ من هنا</p>
+  <div class="form">
+   <label>اسم اللاعب</label><input id="playerName" maxlength="20" value="Player">
+   <label>اختر شخصيتك</label><div class="gender"><button class="selected" data-gender="male">شاب</button><button data-gender="female">بنت</button></div>
+   <label>لون الملابس</label><input id="outfit" type="color" value="#236da5">
+   <label>Language / اللغة</label><select id="lang"><option value="ar">العربية</option><option value="en">English</option></select>
+   <button id="play" class="gold">ابدأ اللعب <span>←</span></button><button id="continue" class="ghost">متابعة آخر تقدم</button>
+  </div>
+  <small>نسخة متصفح تجريبية • حفظ محلي • تحتاج اتصال إنترنت</small>
+ </div>
+</section>
+<div id="hud" class="hidden">
+ <header><div class="mini-logo">W<span>O</span>D</div><div class="hudstats"><span>✦ <b id="money">0</b></span><span>★ <b id="rank">1</b></span><span id="area">وسط المدينة</span></div><button id="menu" class="round">☰</button></header>
+ <div class="mission"><div><b>المهمة النشطة</b><small id="taskcount">0 / 5</small></div><p id="task">اجمع 5 شظايا ضوئية منتشرة في المدينة</p><div class="meter"><i id="meterfill"></i></div></div>
+ <div class="quick"><button id="cam">الكاميرا <kbd>C</kbd></button><button id="clock">الوقت <kbd>N</kbd></button><button id="maptoggle">الخريطة <kbd>M</kbd></button></div>
+ <div id="map"><canvas id="mapcanvas" width="180" height="180"></canvas></div>
+ <div id="notice"></div>
+ <div id="desktophelp">WASD حركة • Shift ركض • Space قفز • E سيارة • C كاميرا • Esc قائمة</div>
+ <div id="mobile">
+  <div class="stick"><button data-move="w">▲</button><div><button data-move="a">◀</button><button data-move="s">▼</button><button data-move="d">▶</button></div></div>
+  <div class="actions"><button data-act="jump">قفز</button><button data-act="use">تفاعل</button><button data-act="cam">كاميرا</button></div>
+ </div>
+</div>
+<div id="pause" class="overlay hidden"><div class="dialog"><div class="tag">WORLD OF DREAMS</div><h2>القائمة</h2><button id="resume" class="gold">متابعة</button><button id="save" class="ghost">حفظ التقدم</button><button id="help" class="ghost">طريقة اللعب</button><button id="home" class="ghost">القائمة الرئيسية</button><p class="note">حفظ محلي على هذا الجهاز فقط.</p></div></div>
+<div id="helpbox" class="overlay hidden"><div class="dialog"><h2>طريقة اللعب</h2><p>WASD أو الأسهم للحركة. Shift للركض. Space للقفز. اقترب من سيارة واضغط E لقيادتها أو الخروج منها. C لتبديل منظور الكاميرا. اجمع الشظايا الذهبية لإكمال المهمة وجمع العملات.</p><p>على الهاتف استخدم لوحة الاتجاهات وأزرار التفاعل.</p><button id="back" class="gold">رجوع</button></div></div>
+<script type="module" src="js/game.js"></script>
+</body></html>
